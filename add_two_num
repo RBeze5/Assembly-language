@@ -1,0 +1,20 @@
+; 6502 Assembly code to add two numbers and store the result in memory
+
+ORG $1000  ; Set the origin address to $1000
+
+LDX #$01   ; Load the value 1 into the X register
+LDY #$02   ; Load the value 2 into the Y register
+
+CLC        ; Clear the carry flag
+LDA X       ; Load the value in X register into the accumulator
+ADC Y       ; Add the value in Y register to the accumulator
+STA $2000  ; Store the result in memory location $2000
+
+BRK        ; Break, end of program
+
+; You can place more code or data here if needed
+
+; Memory locations to store data
+$2000: .BYTE $00   ; Initialize memory location $2000 with 0
+
+; End of program
